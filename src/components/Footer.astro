@@ -1,0 +1,45 @@
+---
+import { site, branches } from "../data";
+---
+
+<footer transition:name="site-footer" class="bg-leaf-deep text-cream">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
+    <div>
+      <img src="/images/site/logoblanco.png" alt="Batidos Pitaya" class="h-12 w-auto" />
+      <p class="mt-4 max-w-xs text-sm text-cream/70">
+        {site.tagline}. Pura fruta nicaragüense, preparada al momento.
+      </p>
+      <div class="mt-5 flex gap-3">
+        <a href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="rounded-full bg-white/10 p-2.5 transition hover:bg-pitaya">
+          <img src="/images/site/ig.png" alt="" class="h-5 w-5" />
+        </a>
+        <a href={site.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="rounded-full bg-white/10 p-2.5 transition hover:bg-pitaya">
+          <img src="/images/site/fb.png" alt="" class="h-5 w-5" />
+        </a>
+        <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" class="rounded-full bg-white/10 px-4 py-2.5 text-sm font-semibold transition hover:bg-pitaya">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <div>
+      <h3 class="font-display text-lg font-bold">Explora</h3>
+      <ul class="mt-4 space-y-2.5 text-sm text-cream/75">
+        <li><a href="/menu" class="transition hover:text-white">Menú</a></li>
+        <li><a href="/sucursales" class="transition hover:text-white">Nuestras sucursales</a></li>
+        <li><a href="/club" class="transition hover:text-white">Club Pitaya</a></li>
+        <li><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" class="transition hover:text-white">Pide por WhatsApp</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-display text-lg font-bold">{branches.length} sucursales en Nicaragua</h3>
+      <ul class="mt-4 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-cream/75">
+        {branches.map((b) => (
+          <li><a href={b.mapUrl} target="_blank" rel="noopener noreferrer" class="transition hover:text-white">{b.city} · {b.name}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-xs text-cream/50">
+    © {new Date().getFullYear()} Batidos Pitaya Nicaragua · {site.phone}
+  </div>
+</footer>

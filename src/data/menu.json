@@ -1,0 +1,412 @@
+{
+  "categories": [
+    {
+      "id": "waffles",
+      "name": "Waffles",
+      "note": "Todos incluyen: Chocolate Líquido Hershey's, Miel de Abeja o Leche Condensada. *Por temporada.",
+      "items": [
+        {
+          "id": "waffle-clasico",
+          "name": "Clásico",
+          "price": 130,
+          "priceVariants": [
+            {
+              "label": "Precio",
+              "price": 130
+            }
+          ],
+          "base": "Harina de Avena, Leche Entera",
+          "toppings": "Banano y Granola Artesanal",
+          "image": "/images/products/waffle-clasico.jpg"
+        },
+        {
+          "id": "waffle-especial",
+          "name": "Especial",
+          "price": 155,
+          "priceVariants": [
+            {
+              "label": "Precio",
+              "price": 155
+            }
+          ],
+          "base": "Harina de Avena, Leche Entera",
+          "toppings": "*Fresas o *Manzana, Banano y Granola Artesanal",
+          "image": "/images/products/waffle-especial.jpg"
+        },
+        {
+          "id": "waffle-proteina",
+          "name": "Con Proteína",
+          "price": 182,
+          "priceVariants": [
+            {
+              "label": "Precio",
+              "price": 182
+            }
+          ],
+          "base": "Proteína, Harina de Avena, Leche Entera",
+          "toppings": "*Fresas o *Manzana, Banano y Granola Artesanal",
+          "options": "Proteína vegana Absolutne Ve / Proteína suero de Leche ProSupps PS",
+          "image": "/images/products/waffle-proteina.jpg"
+        }
+      ]
+    },
+    {
+      "id": "premium",
+      "name": "Batidos Premium",
+      "sizeNote": "Normal (20 oz): C$ 154 | Pequeño (16 oz): C$ 139",
+      "items": [
+        {
+          "id": "masaya",
+          "name": "Masaya",
+          "star": false,
+          "ingredients": "Kiwi, Piña, Calala, Mango",
+          "image": "/images/products/mango-tropical.jpg"
+        },
+        {
+          "id": "gigantona",
+          "name": "Gigantona",
+          "star": false,
+          "ingredients": "Fresas, Pitaya, Manzana, Piña",
+          "image": "/images/products/pitaya-bowl.jpg"
+        },
+        {
+          "id": "tisey",
+          "name": "Tisey",
+          "star": true,
+          "ingredients": "Moras, Arándanos, Calala, Piña",
+          "image": "/images/products/berry-smoothie.jpg"
+        },
+        {
+          "id": "diacachimba",
+          "name": "Diacachimba",
+          "star": false,
+          "ingredients": "Fresas, Mango, Banano, Leche Condensada",
+          "image": "/images/products/strawberry-smoothie.jpg"
+        },
+        {
+          "id": "mombacho",
+          "name": "Mombacho",
+          "star": false,
+          "ingredients": "Mango, Calala, Papaya, Leche",
+          "image": "/images/products/mango-tropical.jpg"
+        },
+        {
+          "id": "matagalpa",
+          "name": "Matagalpa",
+          "star": false,
+          "ingredients": "Fresas, Yogurt Natural, Leche",
+          "image": "/images/products/strawberry-smoothie.jpg"
+        },
+        {
+          "id": "tuani",
+          "name": "El Tuani",
+          "star": false,
+          "ingredients": "Fresas, Piña, Banano, Yogurt Natural",
+          "image": "/images/products/strawberry-smoothie.jpg"
+        },
+        {
+          "id": "managua",
+          "name": "Managua",
+          "star": false,
+          "ingredients": "Doble Fresas, Banano, Leche",
+          "image": "/images/products/strawberry-smoothie.jpg"
+        },
+        {
+          "id": "tripleberry",
+          "name": "Tripleberry",
+          "star": false,
+          "ingredients": "Moras, Arándano, Leche, Yogurt Natural",
+          "image": "/images/products/berry-smoothie.jpg"
+        },
+        {
+          "id": "guasacate",
+          "name": "Guasacate",
+          "star": true,
+          "ingredients": "Fresas, Banano, Avena, Leche",
+          "image": "/images/products/banana-smoothie.jpg"
+        },
+        {
+          "id": "fresa-pasion",
+          "name": "Fresa Pasión",
+          "star": false,
+          "ingredients": "Fresas, Naranja Natural, Limón",
+          "image": "/images/products/strawberry-smoothie.jpg"
+        },
+        {
+          "id": "matizon",
+          "name": "Matizón",
+          "star": false,
+          "ingredients": "Moras, Arándanos, Naranja Natural, Limón",
+          "image": "/images/products/berry-smoothie.jpg"
+        },
+        {
+          "id": "fresona",
+          "name": "Fresona",
+          "star": false,
+          "ingredients": "Doble Fresas, Piña, Limón",
+          "image": "/images/products/strawberry-smoothie.jpg"
+        }
+      ],
+      "prices": {
+        "normal": 154,
+        "small": 139
+      }
+    },
+    {
+      "id": "verdes",
+      "name": "Super Verdes",
+      "sizeNote": "Normal: C$ 134 | Pequeño: C$ 119",
+      "items": [
+        {
+          "id": "catarina",
+          "name": "Catarina",
+          "star": false,
+          "ingredients": "Kiwi, Espinaca, Apio, Piña",
+          "image": "/images/products/green-clean.jpg"
+        },
+        {
+          "id": "detox",
+          "name": "Detox",
+          "star": true,
+          "ingredients": "Manzana, Apio, Piña, Banano, Naranja Natural",
+          "image": "/images/site/5.webp"
+        },
+        {
+          "id": "energygreen",
+          "name": "Energygreen",
+          "star": false,
+          "ingredients": "Manzana, Espinaca, Pepino, Naranja Natural",
+          "image": "/images/products/green-detox.jpg"
+        },
+        {
+          "id": "fit",
+          "name": "El Fit",
+          "star": false,
+          "ingredients": "Manzana, Espinaca, Pepino, Apio, Limón",
+          "image": "/images/products/green-clean.jpg"
+        }
+      ],
+      "prices": {
+        "normal": 134,
+        "small": 119
+      }
+    },
+    {
+      "id": "clasicos",
+      "name": "Batidos Clásicos",
+      "sizeNote": "Normal: C$ 117 | Pequeño: C$ 102",
+      "items": [
+        {
+          "id": "penitas",
+          "name": "Las Peñitas",
+          "star": false,
+          "ingredients": "Manzana, Piña, Sandía",
+          "image": "/images/products/mango-tropical.jpg"
+        },
+        {
+          "id": "cipote",
+          "name": "Cipote",
+          "star": false,
+          "ingredients": "Pitaya, Piña, Papaya, Leche",
+          "image": "/images/products/pitaya-bowl.jpg"
+        },
+        {
+          "id": "dinamita",
+          "name": "Dinamita",
+          "star": false,
+          "ingredients": "Banana, Cocoa, Cacao, Maní, Leche",
+          "image": "/images/products/banana-smoothie.jpg"
+        },
+        {
+          "id": "chele",
+          "name": "El Chele",
+          "star": false,
+          "ingredients": "Banano, Maní, Leche",
+          "image": "/images/products/banana-smoothie.jpg"
+        },
+        {
+          "id": "leon",
+          "name": "León",
+          "star": false,
+          "ingredients": "Pitaya, Limón, Naranja Natural",
+          "image": "/images/products/strawberry-smoothie.jpg"
+        },
+        {
+          "id": "nicoya",
+          "name": "Nicoya",
+          "star": true,
+          "ingredients": "Piña, Calala, Limón",
+          "image": "/images/site/1.webp"
+        },
+        {
+          "id": "caribeno",
+          "name": "Caribeño",
+          "star": true,
+          "ingredients": "Piña, Melón, Calala",
+          "image": "/images/site/1.webp"
+        },
+        {
+          "id": "poneloya",
+          "name": "Poneloya",
+          "star": false,
+          "ingredients": "Papaya, Mango, Banano",
+          "image": "/images/site/7.webp"
+        },
+        {
+          "id": "curioso",
+          "name": "Curioso",
+          "star": false,
+          "ingredients": "Sandía, Piña, Banano",
+          "image": "/images/site/3.webp"
+        },
+        {
+          "id": "pina-colada",
+          "name": "Piña Colada",
+          "star": false,
+          "ingredients": "Piña, Leche de Coco, Yogurt Natural, Leche",
+          "image": "/images/products/banana-smoothie.jpg"
+        },
+        {
+          "id": "chavalo",
+          "name": "Chavalo",
+          "star": false,
+          "ingredients": "Melón, Banano, Leche",
+          "image": "/images/site/2.webp"
+        },
+        {
+          "id": "tropical",
+          "name": "Tropical",
+          "star": false,
+          "ingredients": "Sandía, Mango, Naranja Natural",
+          "image": "/images/site/6.webp"
+        },
+        {
+          "id": "guardabarranco",
+          "name": "Guardabarranco",
+          "star": false,
+          "ingredients": "Papaya, Melón, Limón",
+          "image": "/images/products/mango-tropical.jpg"
+        }
+      ],
+      "prices": {
+        "normal": 117,
+        "small": 102
+      }
+    },
+    {
+      "id": "proteina",
+      "name": "Batidos c/Proteína",
+      "sizeNote": "Normal: C$ 140 | Pequeño: C$ 125",
+      "items": [
+        {
+          "id": "pompeado",
+          "name": "Pompeado",
+          "star": true,
+          "ingredients": "Proteína, Piña, Banano, Leche",
+          "image": "/images/products/pompeado.jpg"
+        },
+        {
+          "id": "proteico",
+          "name": "Proteico",
+          "star": false,
+          "ingredients": "Proteína, Cacao, Cocoa, Banano, Avena, Leche",
+          "image": "/images/products/proteico.jpg"
+        }
+      ],
+      "prices": {
+        "normal": 140,
+        "small": 125
+      }
+    },
+    {
+      "id": "bowls",
+      "name": "Smoothie Bowls",
+      "note": "*Por temporada.",
+      "items": [
+        {
+          "id": "fachento",
+          "name": "Fachento",
+          "price": 198,
+          "base": "Semillas de Cacao, Cocoa, Maní Horneado, Banano, Leche de Coco",
+          "toppings": "Granola Artesanal, Banano, *Fresas o *Manzana, Coco Rallado",
+          "image": "/images/products/acai-bowl.jpg"
+        },
+        {
+          "id": "ometepe",
+          "name": "Ometepe",
+          "price": 198,
+          "base": "Moras, Arándanos, Avena, Banano, Leche de Coco",
+          "toppings": "Granola Artesanal, Banano, *Fresas o *Manzana, Coco Rallado",
+          "image": "/images/products/berry-smoothie.jpg"
+        },
+        {
+          "id": "dragon",
+          "name": "Dragon",
+          "price": 207,
+          "base": "Pitaya, Banano, Avena, Yogurt Natural",
+          "toppings": "Granola Artesanal, Banano, *Fresas o *Manzana, Coco Rallado, Kiwi",
+          "image": "/images/products/pitaya-bowl.jpg"
+        },
+        {
+          "id": "acai",
+          "name": "Açaí",
+          "price": 229,
+          "base": "Açaí, Moras, Arándanos, Avena, Yogurt Natural",
+          "toppings": "Granola Artesanal, Banano, *Fresas o *Manzana, Coco Rallado, Kiwi",
+          "image": "/images/products/acai-bowl.jpg"
+        }
+      ]
+    },
+    {
+      "id": "limonadas",
+      "name": "Limonadas",
+      "items": [
+        {
+          "id": "lim-clasica",
+          "name": "Clásica",
+          "prices": {
+            "normal": 114,
+            "small": 99
+          },
+          "image": "/images/products/lemonade.jpg"
+        },
+        {
+          "id": "lim-hierbabuena",
+          "name": "Hierba Buena",
+          "prices": {
+            "normal": 114,
+            "small": 99
+          },
+          "image": "/images/products/green-clean.jpg"
+        },
+        {
+          "id": "lim-sandia",
+          "name": "Sandía",
+          "prices": {
+            "normal": 114,
+            "small": 99
+          },
+          "image": "/images/products/strawberry-smoothie.jpg"
+        },
+        {
+          "id": "lim-calala",
+          "name": "Calala",
+          "prices": {
+            "normal": 114,
+            "small": 99
+          },
+          "image": "/images/products/mango-tropical.jpg"
+        },
+        {
+          "id": "lim-fresa",
+          "name": "Fresa",
+          "prices": {
+            "normal": 134,
+            "small": 119
+          },
+          "image": "/images/products/limonada-fresa.jpg"
+        }
+      ]
+    }
+  ]
+}

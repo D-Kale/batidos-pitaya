@@ -1,0 +1,42 @@
+---
+import { site } from "../data";
+
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/menu", label: "Menú" },
+  { href: "/sucursales", label: "Sucursales" },
+  { href: "/club", label: "Club Pitaya" },
+];
+const path = Astro.url.pathname;
+---
+
+<header
+  transition:name="site-header"
+  class="sticky top-0 z-50 border-b border-leaf/10 bg-cream/85 backdrop-blur-md"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+    <a href="/" class="flex items-center gap-2.5">
+      <img src="/images/site/pines2.png" alt="Batidos Pitaya" class="h-10 w-auto object-contain" />
+    </a>
+    <nav class="hidden items-center gap-7 md:flex">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class={`text-sm font-semibold transition-colors hover:text-pitaya ${
+            path === l.href ? "text-pitaya" : "text-leaf"
+          }`}
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+    <a
+      href={site.whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="rounded-full bg-pitaya px-5 py-2.5 text-sm font-bold text-white shadow-md transition-transform hover:scale-105 hover:bg-pitaya-deep"
+    >
+      Pedir ahora
+    </a>
+  </div>
+</header>

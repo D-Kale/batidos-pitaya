@@ -1,0 +1,215 @@
+export interface Branch {
+  id: string;
+  name: string;
+  city: string;
+  address: string;
+  hours: string;
+  mapUrl: string;
+  pedidosUrl?: string;
+  photo?: string;
+}
+
+export const site = {
+  name: "Batidos Pitaya",
+  tagline: "Los mejores batidos de pura fruta de Nicaragua",
+  phone: "+505 7685 9041",
+  whatsapp: "https://wa.me/50576859041",
+  whatsappOrder: (item: string, size?: string) =>
+    `https://wa.me/50576859041/?text=${encodeURIComponent(
+      `Hola Batidos Pitaya, quiero ordenar ${item}${size ? ` ${size}` : ""} por favor.`
+    )}`,
+  instagram: "https://instagram.com/batidospitaya",
+  facebook: "https://facebook.com/batidospitaya",
+  members: "5,000+",
+};
+
+export const branches: Branch[] = [
+  {
+    id: "las-americas",
+    name: "Multicentro Las Américas",
+    city: "Managua",
+    address: "Centro comercial Multicentro Las Américas",
+    hours: "L-D: 7:30am - 7:30pm",
+    mapUrl: "https://maps.app.goo.gl/iHJFk15GKNadULCH9",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya-las-americas-bc9ecdd5-d2fc-4ea3-951e-dc47c327b179-menu",
+    photo: "/images/branches/branch-americas.jpg",
+  },
+  {
+    id: "calli",
+    name: "Plaza Calli",
+    city: "Managua",
+    address: "Km 10 carretera nueva a León, intersección cuesta el plomo, 1km al oeste",
+    hours: "L-D: 7:30am - 9:30pm",
+    mapUrl: "https://maps.app.goo.gl/aWHhFuyHo3cQt9xp8",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya-plaza-calli-1754054f-3d64-4014-8de3-d7e0d7a8f6ce-menu",
+    photo: "/images/branches/branch-calli.jpg",
+  },
+  {
+    id: "ticuantepe",
+    name: "Plaza Eiffel",
+    city: "Ticuantepe",
+    address: "100 mts al sur de Jardines del Recuerdo",
+    hours: "L-V: 7:00am - 9:00pm · S-D: 7:30am - 8:00pm",
+    mapUrl: "https://maps.app.goo.gl/3VyYkWZVemkKvnvi6",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya-ticuantepe-6e7bff8c-1feb-4078-9aa8-982e4d996f18-menu",
+    photo: "/images/branches/branch-eiffel.jpg",
+  },
+  {
+    id: "unica",
+    name: "UNICA",
+    city: "Managua",
+    address: "Km 9.5 Carretera a Masaya, 500 varas al suroeste",
+    hours: "L-V: 7:00am - 5:00pm · S: 7:00am - 4:00pm",
+    mapUrl: "https://maps.app.goo.gl/jQMoARRMgomm3Sqq9",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya--managua-cfbe6934-afb3-4cfe-96db-fb6016eb59d4-menu",
+    photo: "/images/branches/branch-unica.jpg",
+  },
+  {
+    id: "las-brisas",
+    name: "Las Brisas",
+    city: "Managua",
+    address: "Semáforos de Linda Vista, 2 y media cuadras abajo, frente al BAC",
+    hours: "L-D: 7:00am - 9:00pm",
+    mapUrl: "https://share.google/oPfIw1wUbWeUAPFHR",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya-las-brisas-c4bd4aeb-1955-4a3e-8cbf-7fb1ffc478e6-menu",
+    photo: "/images/branches/branch-brisas.jpg",
+  },
+  {
+    id: "altamira",
+    name: "Altamira",
+    city: "Managua",
+    address: "De la Vicky 1c al sur, 1/2c al lago",
+    hours: "L-D: 7:00am - 9:00pm",
+    mapUrl: "https://maps.app.goo.gl/g8PZAQZtaj9BiHLA8",
+    photo: "/images/branches/branch-altamira.jpg",
+  },
+  {
+    id: "las-colinas",
+    name: "Las Colinas",
+    city: "Managua",
+    address: "1era entrada Las Colinas, 200m al Este (Farmers Market)",
+    hours: "L-D: 7:00am - 9:00pm",
+    mapUrl: "https://maps.app.goo.gl/RGQweBH8ALFRSCsq8",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya-las-colinas-73f82586-f5ca-40bb-b0ad-16a6902a534a-menu",
+    photo: "/images/branches/branch-colina.jpg",
+  },
+  {
+    id: "villa-fontana",
+    name: "Villa Fontana",
+    city: "Managua",
+    address: "Semáforos del club terraza, 80mts al Norte",
+    hours: "L-D: 6:30am - 7:00pm",
+    mapUrl: "https://maps.app.goo.gl/s41K68uJbmfnUn4G9",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya--villa-fontana-2524594e-b957-4751-a575-4a67860d3c4c-menu",
+    photo: "/images/branches/branch-novovilla.jpg",
+  },
+  {
+    id: "plaza-natura",
+    name: "Plaza Natura",
+    city: "Managua",
+    address: "Plaza Principal Plaza Natura",
+    hours: "L-D: 6:30am - 7:00pm",
+    mapUrl: "https://maps.app.goo.gl/1VJUZmzFKwvJUti4A",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/managua/batidos-pitaya-plaza-natura-0b64eea6-8712-4e2d-9b13-10528571b8f8-menu",
+    photo: "/images/branches/branch-nativi.jpg",
+  },
+  {
+    id: "granada",
+    name: "Granada",
+    city: "Granada",
+    address: "De la Catedral, 2C al Lago sobre la Calzada",
+    hours: "L-J: 8:30am - 9:00pm · V-D: 8:30am - 10:00pm",
+    mapUrl: "https://maps.app.goo.gl/W2BirdhezxUy7arL8",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/granada/batidos-pitaya-granada-2be949e6-3522-432d-a142-dbfed8e0cc6a-menu",
+    photo: "/images/branches/branch-granada.jpg",
+  },
+  {
+    id: "masaya",
+    name: "Masaya",
+    city: "Masaya",
+    address: "Frente a Ópticas Munkel / Costado Norte de Plaza 2000",
+    hours: "L-D: 7:00am - 9:00pm",
+    mapUrl: "https://maps.app.goo.gl/zi8M5VJeZHWcjwrD7",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/masaya/batidos-pitaya-masaya-aa011bc2-e78c-4292-bbdb-a5754a6063d1-menu",
+    photo: "/images/branches/branch-masaya.jpg",
+  },
+  {
+    id: "esteli",
+    name: "Estelí",
+    city: "Estelí",
+    address: "Costado Sur de la Catedral",
+    hours: "L-D: 7:00am - 9:00pm",
+    mapUrl: "https://maps.app.goo.gl/qWjc5mki8owkcb9y7",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/esteli/batidos-pitaya-esteli-6a2bf48a-089f-4ab0-b75f-56e2476ef361-menu",
+    photo: "/images/branches/branch-esteli.jpg",
+  },
+  {
+    id: "matagalpa",
+    name: "Matagalpa",
+    city: "Matagalpa",
+    address: "De Payless Darío, 25 varas al Norte",
+    hours: "L-D: 7:00am - 9:00pm",
+    mapUrl: "https://maps.app.goo.gl/1dUeicYDv96NW2sH8",
+    photo: "/images/branches/branch-matagalpa.jpg",
+  },
+  {
+    id: "leon",
+    name: "León",
+    city: "León",
+    address: "Costado noroeste de la Iglesia La Merced, frente a la cancha 23 de julio",
+    hours: "L-D: 7:00am - 9:00pm",
+    mapUrl: "https://maps.app.goo.gl/HXzSqkyzff48Wu4q9",
+    pedidosUrl: "https://www.pedidosyani.com.ni/restaurantes/leon/batidos-pitaya-leon-centro-menu?origin=shop_list",
+    photo: "/images/branches/branch-leon.jpg",
+  },
+];
+
+export const club = {
+  members: "5,000+",
+  benefits: [
+    { icon: "cup", title: "Agranda tu batido", detail: "x C$ 5" },
+    { icon: "cup", title: "Batido Clásico 16oz", detail: "2 x C$ 180" },
+    { icon: "cup", title: "Batido Especial 16oz", detail: "2 x C$ 210" },
+    { icon: "cup", title: "Batido Proteína 16oz", detail: "2 x C$ 220" },
+    { icon: "cup", title: "Batido Premium 16oz", detail: "2 x C$ 240" },
+    { icon: "waffle", title: "Waffles Especiales", detail: "2 x C$ 275" },
+    { icon: "cookie", title: "Galletas de avena", detail: "4 x 3 a C$ 84" },
+    { icon: "gift", title: "Beneficio de cumpleaños", detail: "1 Batido Gratis al cumpleañero" },
+  ],
+  pointsEarn: [
+    { group: "Batidos, Limonadas, Waffles y Bowls", items: [
+      "1 batido Premium 20oz: 15 pts", "1 batido Premium 16oz: 12 pts",
+      "1 batido Especial 20oz: 13 pts", "1 batido Especial 16oz: 10 pts",
+      "1 batido Clásico 20oz: 11 pts", "1 batido Clásico 16oz: 10 pts",
+      "1 batido con Proteína 20oz: 15 pts", "1 batido con Proteína 16oz: 12 pts",
+      "1 limonada clásica 20oz: 13 pts", "1 limonada clásica 16oz: 10 pts",
+      "1 limonada de fresa 20oz: 13 pts", "1 limonada de fresa 16oz: 11 pts",
+      "1 batido super verde 20oz: 13 pts", "1 batido super verde 16oz: 10 pts",
+      "1 waffle clásico: 15 pts", "1 waffle especial: 16 pts", "1 waffle con proteína: 18 pts",
+      "1 bowl Fachento / Ometepe: 18 pts", "1 bowl Dragon: 20 pts", "1 bowl Açaí: 22 pts",
+    ]},
+    { group: "Productos Marca Pitaya", items: [
+      "2 galletas de avena: 5 pts", "1 semilla de almendra (75gr): 8 pts",
+      "1 pistacho (60gr): 8 pts", "1 marañón (45gr): 12 pts",
+      "1 mix supremo (88gr): 12 pts", "1 mix tropical (56gr): 12 pts",
+      "1 cacao en polvo: 21 pts", "1 semillas de cacao (151gr): 29 pts",
+      "1 grano (230gr): 21 pts",
+    ]},
+  ],
+  redeems: [
+    { pts: "3 pts", reward: "Agranda tu batido" },
+    { pts: "3 pts", reward: "Renovación de tarjeta" },
+    { pts: "5 pts", reward: "2 Galletas de avena" },
+    { pts: "8 pts", reward: "1 Semilla marca Pitaya" },
+    { pts: "10 pts", reward: "Batido Clásico / Especial" },
+    { pts: "12 pts", reward: "Batido Proteico / Premium 16oz" },
+    { pts: "15 pts", reward: "Waffle Clásico" },
+    { pts: "18 pts", reward: "1 Bowl (No aplica Açaí)" },
+  ],
+  rules: [
+    "El batido gratis de cumpleañero aplica únicamente en tamaño 16oz de las líneas Clásico, Especial, Premium, Proteico o Verde.",
+    "Los productos canjeados o comprados con promoción no acumulan puntos.",
+    "La tarjeta de membresía se inactiva después de 1 año sin uso.",
+  ],
+  partner: { name: "Amapolas Floristería", discount: "10% de descuento en catálogo" },
+};

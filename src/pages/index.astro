@@ -1,0 +1,310 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, menu } from "../data";
+
+const featured = [
+  { name: "Caribeño", img: "/images/site/1.webp", desc: "Piña, melón y calala — el clásico que nunca falla" },
+  { name: "Chavalo", img: "/images/site/2.webp", desc: "Melón, banano y leche, cremoso y fresco" },
+  { name: "Curioso", img: "/images/site/3.webp", desc: "Sandía, piña y banano, una combinación inesperada" },
+  { name: "Detox Especial", img: "/images/site/4.webp", desc: "Super verde para empezar el día con energía" },
+  { name: "Detox", img: "/images/site/5.webp", desc: "Manzana, apio, piña y banano — luz pura" },
+  { name: "Tropical", img: "/images/site/6.webp", desc: "Sandía, mango y naranja natural" },
+  { name: "Poneloya", img: "/images/site/7.webp", desc: "Papaya, mango y banano, sabor a occidente" },
+];
+
+const categoryImages: Record<string, string> = {
+  waffles: "/images/products/waffle-clasico.jpg",
+  premium: "/images/products/berry-smoothie.jpg",
+  verdes: "/images/products/green-detox.jpg",
+  clasicos: "/images/site/1.webp",
+  proteina: "/images/products/pompeado.jpg",
+  bowls: "/images/products/pitaya-bowl.jpg",
+  limonadas: "/images/products/lemonade.jpg",
+};
+
+const categories = menu.categories.map((c) => ({
+  id: c.id,
+  name: c.name,
+  count: c.items.length,
+  image: categoryImages[c.id] || "/images/site/1.webp",
+}));
+
+const gallery = Array.from({ length: 15 }, (_, i) => `/images/gallery/${i + 1}.webp`);
+---
+
+<Base>
+  <!-- HERO -->
+  <section class="relative overflow-hidden min-h-[85vh] flex items-center">
+    <div class="absolute inset-0">
+      <img
+        src="/images/site/hero-smoothies.jpg"
+        alt="Batidos Pitaya — Pura fruta natural"
+        class="hero-img h-full w-full object-cover object-center scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-leaf-deep/90 via-leaf-deep/75 to-leaf-deep/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-leaf-deep via-transparent to-transparent"></div>
+    </div>
+    <div class="relative mx-auto flex max-w-6xl flex-col items-center px-5 pb-24 pt-28 text-center md:pb-32 md:pt-36">
+      <p class="hero-el mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+        ★ {site.members} miembros del Club Pitaya
+      </p>
+      <h1 class="hero-el font-display max-w-3xl text-5xl font-black leading-[1.05] text-white md:text-7xl">
+        Pura fruta.<br />
+        <span class="text-sun">Puro sabor.</span>
+      </h1>
+      <p class="hero-el mt-6 max-w-xl text-base text-white/90 md:text-lg">
+        Los mejores batidos de fruta 100% natural de Nicaragua. Preparados al momento,
+        con ingredientes reales, sin concentrados artificiales y el auténtico toque de la pitaya.
+      </p>
+      <div class="hero-el mt-9 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/menu"
+          class="rounded-full bg-pitaya px-8 py-4 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-pitaya-deep hover:shadow-pitaya/30"
+        >
+          Explorar el menú
+        </a>
+        <a
+          href={site.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full border-2 border-white/70 bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur transition-all hover:scale-105 hover:bg-white/20"
+        >
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </div>
+    <!-- marquee -->
+    <div class="absolute inset-x-0 bottom-0 overflow-hidden border-t border-white/10 bg-leaf-deep/60 py-3 backdrop-blur-sm">
+      <div class="marquee-track flex w-max items-center gap-8 whitespace-nowrap text-sm font-semibold uppercase tracking-[0.25em] text-white/80">
+        {[0, 1].map(() => (
+          <>
+            <span>Batidos premium</span><span class="text-pitaya">✦</span>
+            <span>Super verdes</span><span class="text-sun">✦</span>
+            <span>Smoothie bowls</span><span class="text-pitaya">✦</span>
+            <span>Limonadas naturales</span><span class="text-sun">✦</span>
+            <span>Waffles artesanales</span><span class="text-pitaya">✦</span>
+            <span>14 sucursales</span><span class="text-sun">✦</span>
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED BATIDOS -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="reveal mb-12 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-pitaya">Los favoritos</p>
+        <h2 class="font-display mt-2 text-4xl font-black text-leaf md:text-5xl">Batidos que son un himno</h2>
+      </div>
+      <a href="/menu" class="text-sm font-bold text-pitaya underline-offset-4 hover:underline">
+        Ver menú completo →
+      </a>
+    </div>
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      {featured.map((f, i) => (
+        <a
+          href={`/menu?item=${f.name.toLowerCase().replace(/\s+/g, "-")}`}
+          class={`reveal group relative overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-leaf/10 transition hover:shadow-xl ${i === 0 ? "col-span-2 row-span-1 sm:col-span-1" : ""}`}
+        >
+          <div class="aspect-[4/5] overflow-hidden bg-leaf-soft">
+            <img
+              src={f.img}
+              alt={f.name}
+              loading="lazy"
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            />
+          </div>
+          <div class="p-4">
+            <h3 class="font-display text-lg font-bold text-leaf">{f.name}</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-relaxed text-ink/60">{f.desc}</p>
+          </div>
+        </a>
+      ))}
+      <!-- CTA card -->
+      <a
+        href="/menu"
+        class="reveal group flex aspect-[4/5] flex-col items-center justify-center gap-3 rounded-3xl bg-leaf p-6 text-center text-white transition hover:bg-leaf-deep"
+      >
+        <span class="font-display text-3xl font-black">+40</span>
+        <span class="text-sm font-semibold text-white/80">productos en el menú</span>
+        <span class="mt-2 rounded-full bg-pitaya px-5 py-2 text-sm font-bold transition group-hover:scale-105">
+          Explorar
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="bg-gradient-to-b from-leaf-deep via-leaf to-leaf-deep py-20 text-cream md:py-28">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="reveal mb-12 text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-sun">Explorá la carta</p>
+        <h2 class="font-display mt-2 text-4xl font-black text-white md:text-5xl">Para cada antojo</h2>
+        <p class="mt-3 text-cream/70 max-w-md mx-auto text-sm md:text-base">
+          Fruta fresca seleccionada, sin concentrados ni conservantes.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {categories.map((c, idx) => (
+          <a
+            href={`/menu?cat=${c.id}`}
+            class={`reveal group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-pitaya/50 hover:shadow-2xl hover:bg-white/10 ${
+              idx === 0 ? "sm:col-span-2 lg:col-span-2 xl:col-span-2" : ""
+            }`}
+          >
+            <div class="relative h-44 w-full overflow-hidden bg-leaf-deep/40">
+              <img
+                src={c.image}
+                alt={c.name}
+                loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-leaf-deep via-leaf-deep/40 to-transparent"></div>
+              <span class="absolute top-4 right-4 rounded-full bg-leaf-deep/80 backdrop-blur-md px-3 py-1 text-xs font-bold text-sun border border-white/10 shadow-sm">
+                {c.count} opciones
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-2xl font-bold text-white group-hover:text-sun transition-colors">
+                {c.name}
+              </h3>
+              <p class="mt-2 text-sm text-cream/70 leading-relaxed">
+                {c.id === "premium" && "Fresas, pitaya, manzana, piña — las mezclas insignia."}
+                {c.id === "clasicos" && "Los que te esperan en cada sucursal desde siempre."}
+                {c.id === "verdes" && "Kiwi, espinaca, apio — energía en estado puro."}
+                {c.id === "proteina" && "Batidos con proteína para tu día a día."}
+                {c.id === "bowls" && "Bowls densos, cremosos y llenos de color."}
+                {c.id === "waffles" && "Crujientes por fuera, esponjosos por dentro."}
+                {c.id === "limonadas" && "Naturales, frías y perfectamente balanceadas."}
+              </p>
+              <div class="mt-4 flex items-center gap-1.5 text-xs font-bold text-pitaya uppercase tracking-wider group-hover:text-sun transition-colors">
+                <span>Ver productos</span>
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUB PITAYA -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="reveal grid items-center gap-10 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-pitaya to-pitaya-deep p-8 text-white shadow-2xl md:grid-cols-2 md:p-14">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/70">Club Pitaya</p>
+        <h2 class="font-display mt-2 text-4xl font-black leading-tight md:text-5xl">
+          +{site.members.replace("+", "")} personas ya son pitayas
+        </h2>
+        <p class="mt-4 max-w-md text-white/85">
+          Acumulá puntos en cada compra, canjealos por batidos gratis y
+          celebrá tu cumpleaños con un batido on the house.
+        </p>
+        <ul class="mt-6 space-y-3 text-sm font-semibold">
+          <li class="flex items-center gap-3"><span class="text-sun">✦</span> Puntos por cada batido, waffle y bowl</li>
+          <li class="flex items-center gap-3"><span class="text-sun">✦</span> Combos exclusivos para miembros</li>
+          <li class="flex items-center gap-3"><span class="text-sun">✦</span> 1 batido gratis en tu cumpleaños</li>
+          <li class="flex items-center gap-3"><span class="text-sun">✦</span> 10% dto. en Amapolas Floristería</li>
+        </ul>
+        <a
+          href="/club"
+          class="mt-8 inline-block rounded-full bg-white px-8 py-4 text-base font-bold text-pitaya-deep transition hover:scale-105"
+        >
+          Conocer el club
+        </a>
+      </div>
+      <div class="relative flex items-center justify-center">
+        <img
+          src="/images/club/club.webp"
+          alt="Tarjeta Club Pitaya"
+          loading="lazy"
+          class="max-h-[420px] w-auto rounded-3xl object-contain shadow-2xl transition hover:scale-105"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="bg-leaf-soft py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="reveal mb-12 text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-pitaya">Comunidad</p>
+        <h2 class="font-display mt-2 text-4xl font-black text-leaf md:text-5xl">#PitayaLove</h2>
+        <p class="mx-auto mt-3 max-w-lg text-ink/70 text-sm md:text-base">
+          Miles de personas comparten su momento Pitaya cada día en Nicaragua.
+        </p>
+      </div>
+      
+      {/* Dynamic cleanly fitted responsive photo grid */}
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        {gallery.slice(0, 15).map((src, i) => (
+          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-leaf/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <img
+              src={src}
+              alt={`Momento Pitaya ${i + 1}`}
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-leaf-deep/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-3">
+              <span class="text-[11px] font-bold text-white tracking-wider">@batidospitaya</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="reveal mt-12 text-center">
+        <a
+          href={site.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-leaf px-8 py-4 font-bold text-white shadow-md transition-all hover:scale-105 hover:bg-leaf-deep"
+        >
+          <span>Seguinos en Instagram</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="bg-leaf-deep py-20 text-center text-cream">
+    <div class="mx-auto max-w-3xl px-5">
+      <h2 class="reveal font-display text-4xl font-black md:text-5xl">
+        ¿Ya probaste el tuyo?
+      </h2>
+      <p class="reveal mt-4 text-cream/75">
+        14 sucursales en Managua, Granada, Masaya, Estelí, Matagalpa y León.
+        O pedí delivery por WhatsApp.
+      </p>
+      <div class="reveal mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/sucursales" class="rounded-full bg-white/10 px-8 py-4 font-bold ring-1 ring-white/25 transition hover:bg-white/20">
+          Ver sucursales
+        </a>
+        <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" class="rounded-full bg-pitaya px-8 py-4 font-bold text-white transition hover:bg-pitaya-deep">
+          Pedir ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      // hero entrance
+      gsap.fromTo(".hero-img", { scale: 1.15 }, { scale: 1, duration: 2.4, ease: "power2.out" });
+      gsap.fromTo(".hero-el", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.12, delay: 0.3, ease: "power3.out" });
+      // scroll reveals
+      gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) => {
+        gsap.fromTo(el, { y: 36, opacity: 0 }, {
+          y: 0, opacity: 1, duration: 0.9, ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 88%", once: true },
+        });
+      });
+    });
+    document.addEventListener("astro:before-swap", () => ctx.revert());
+  </script>
+</Base>

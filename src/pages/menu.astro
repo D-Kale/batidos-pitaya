@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import MenuBrowser from "../components/MenuBrowser";
+import { CartDrawer } from "../components/CartDrawer";
+import { menu } from "../data";
+---
+
+<Base
+  title="Menú Digital — Batidos Pitaya"
+  description="Batidos premium, clásicos, super verdes, con proteína, smoothie bowls, waffles y limonadas. Pura fruta nicaragüense."
+>
+  <section class="bg-leaf-deep pb-14 pt-16 text-center text-cream">
+    <div class="mx-auto max-w-3xl px-5">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-sun">La carta digital</p>
+      <h1 class="font-display mt-3 text-5xl font-black md:text-6xl">Nuestro Menú</h1>
+      <p class="mt-4 text-cream/75 max-w-xl mx-auto">
+        Todo preparado al momento con fruta 100% fresca. Podés pedir un solo producto directo o armar tu orden combinada.
+      </p>
+    </div>
+  </section>
+  <MenuBrowser categories={menu.categories} client:load />
+  <CartDrawer client:load />
+</Base>
